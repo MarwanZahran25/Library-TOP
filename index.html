@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marwan's library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div
+      id="page"
+      class="relative grid h-screen w-screen grid-rows-[70px,1fr] bg-gray-300"
+    >
+      <button
+        class="cols-span-full absolute top-4 row-span-1 row-start-1 block h-9 w-24 self-center self-center justify-self-center rounded-lg border-2 border-gray-300 bg-green-500 text-white hover:bg-green-600"
+        id="add-book-btn"
+      >
+        Add book
+      </button>
+      <div
+        id="library"
+        class="row-start-2 grid auto-rows-max grid-cols-5 gap-3 bg-gray-200 p-9"
+      ></div>
+      <dialog
+        id="book-submit-form"
+        class="absolute bottom-0 w-fit rounded-lg p-4"
+      >
+        <form action="" class="flex flex-col gap-3 p-4">
+          <input
+            class="w-80 rounded-md border-2 border-green-100 bg-slate-100 p-1"
+            id="title"
+            type="text"
+            placeholder="enter the book title"
+            required
+          />
+          <input
+            class="w-80 rounded-md border-2 border-green-100 bg-slate-100 p-1"
+            id="author"
+            type="text"
+            placeholder="enter the author name"
+            required
+          />
+          <input
+            class="w-80 rounded-md border-2 border-green-100 bg-slate-100 p-1"
+            id="pages"
+            type="number"
+            placeholder="enter number of pages"
+            required
+          />
+          <fieldset class="flex gap-5 self-center">
+            <div class="flex flex-col justify-center gap-1">
+              <label class="text-emerald-300" for="read">Read</label>
+              <input
+                id="read"
+                type="radio"
+                value="Finished reading"
+                name="reading"
+              />
+            </div>
+            <div class="flex flex-col gap-1">
+              <label class="text-rose-400" for="didnt">Haven't read</label>
+              <input
+                id="didnt"
+                type="radio"
+                value="Haven't finished"
+                name="reading"
+                class="rounded-none"
+              />
+            </div>
+          </fieldset>
+          <button
+            id="submit-btn"
+            class="mt-4 h-8 w-24 self-center rounded-lg bg-sky-500 text-white"
+          >
+            Add
+          </button>
+        </form>
+      </dialog>
+    </div>
+  </body>
+</html>
