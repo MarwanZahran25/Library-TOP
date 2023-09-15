@@ -67,7 +67,7 @@ function makeAbook(obj) {
   changStatus.textContent = "change status";
   deleteBtn.textContent = "Delete";
   changStatus.classList.add(
-    "w-fit",
+    "w-max",
     "h-8",
     "bg-green-400",
     "rounded-lg",
@@ -114,6 +114,7 @@ function makeAbook(obj) {
     "rounded-md",
     "shadow-inner",
     "p-3",
+    "justify-self-stretch",
   );
   let divs = bookDiv.querySelectorAll("div");
   divs.forEach((div) => {
