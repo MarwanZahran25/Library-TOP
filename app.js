@@ -72,12 +72,22 @@ function makeAbook(obj) {
     "bg-green-400",
     "rounded-lg",
     "px-2",
+    "hover:bg-green-600",
+    "shadow",
+  );
+  deleteBtn.classList.add(
+    "w-24",
+    "h-8",
+    "bg-red-400",
+    "rounded-lg",
+    "hover:bg-red-600",
+    "shadow",
   );
   changStatus.addEventListener("click", () => {
-    if (statusFeild.textContent == "status : Finished reading") {
-      statusFeild.textContent = "satus : Haven't finished";
-    } else if (statusFeild.textContent != "status : Finished reading") {
-      statusFeild.textContent = "status : Finished reading";
+    if (statusFeild.textContent == "Status : Finished reading") {
+      statusFeild.textContent = "Status : Haven't finished";
+    } else if (statusFeild.textContent != "Status : Finished reading") {
+      statusFeild.textContent = "Status : Finished reading";
     }
   });
   deleteBtn.addEventListener("click", (e) => {
@@ -87,15 +97,21 @@ function makeAbook(obj) {
     Library.removeChild(theElment);
     myLibrary.splice(datAtt, 1);
   });
-  deleteBtn.classList.add("w-24", "h-8", "bg-red-400", "rounded-lg");
   btnsContainer.appendChild(deleteBtn);
   btnsContainer.appendChild(changStatus);
-  btnsContainer.classList.add("flex", "gap-2", "justify-center", "mt-auto");
+  btnsContainer.classList.add(
+    "flex",
+    "gap-2",
+    "justify-center",
 
-  titleFeild.textContent = `title : ${obj.title}`;
-  authorFeild.textContent = `by : ${obj.author}`;
+    "self-center",
+    "mb-2",
+  );
+
+  titleFeild.textContent = `Title : ${obj.title}`;
+  authorFeild.textContent = `By : ${obj.author}`;
   pagesFeild.textContent = `${obj.pages} pages`;
-  statusFeild.textContent = `status : ${obj.status}`;
+  statusFeild.textContent = `Status : ${obj.status}`;
   bookDiv.setAttribute("data-loacation", myLibrary.indexOf(obj));
   bookDiv.appendChild(titleFeild);
   bookDiv.appendChild(authorFeild);
@@ -107,18 +123,20 @@ function makeAbook(obj) {
     "gap-3",
     "flex-col",
     "items-center",
-    "bg-white",
+    "bg-zinc-300",
     "w-68",
-    "h-56",
-    "justify-center",
+    "h-72",
+    "justify-between",
     "rounded-md",
     "shadow-inner",
     "p-3",
     "justify-self-stretch",
+    "relative",
+    "px-4",
   );
   let divs = bookDiv.querySelectorAll("div");
   divs.forEach((div) => {
-    div.classList.add("font-bold");
+    div.classList.add("font-bold", "self-start", "ml-4");
   });
   Library.appendChild(bookDiv);
 }
