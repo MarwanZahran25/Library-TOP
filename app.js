@@ -30,7 +30,7 @@ submitBtn.addEventListener("click", (e) => {
     statusValue = document.getElementById("read").value;
   } else if (document.getElementById("didnt").checked) {
     statusValue = document.getElementById("didnt").value;
-  }
+  } else statusValue = "";
   myLibrary.push(
     new book(
       titleInput.value,
